@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tinhtong</title>
+</head>
+<body>
+    <h2>Tính điểm trung bình cộng 3 môn Toán, Lý, Hóa</h2>
+    <p>Yêu cầu 1:  sử dụng prompt để nhập và hiển thị kết quả bằng alert</p>
+    <script>
+        let toan = +prompt("Nhập điểm của môn Toán");
+        let ly = +prompt("Nhập điểm của môn Lý");
+        let hoa = +prompt("Nhập điểm của môn Hóa");
+        let avg = (toan + ly + hoa)/3;
+        alert("Tổng điểm trung bình cộng 3 môn Toán, Lý, Hóa là " + avg);
+
+    </script>
+
+    <p>Yêu cầu 2: sử dụng thẻ input nhập liệu + hiển thị kết quả lên thẻ h1</p>
+    <input id="input1" placeholder="Nhập điểm của môn Toán">
+    <input id="input2" placeholder="Nhập điểm của môn Lý">
+    <input id="input3" placeholder="Nhập điểm của môn Hóa">
+    <button onclick="tong()">Tổng điểm</button>
+    <h2 id="result"></h2>
+    <script>
+        function tong(){
+            let toan = +document.getElementById('input1').value;
+            let ly = +document.getElementById('input2').value;
+            let hoa = +document.getElementById('input3').value;
+            let avg = (toan + ly + hoa)/3;
+            document.getElementById("result").innerText = avg;
+        }
+    </script>
+</body>
+</html>

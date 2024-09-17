@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1 onmouseover="change1()" id="content">Hello</h1>
+    <button onclick="document.getElementById('content').append('Viet Nam')">Change Content</button>
+    <button onclick="document.getElementById('content').style.color='red'">Change Content</button> -->
+    <input id="input1" placeholder="Nhập n1">
+    <input id="input2" placeholder="Nhập n2">
+    <button onclick="cong()">Cộng</button>
+    <h2 id="result"></h2>
+    <!-- <script src="myjs.js"></script> -->
+    <script>
+        /* function change1(){
+            document.getElementById('content').style.background='yellow'
+        }
+        alert("XIn chào")
+        */
+       // các hàm nhập dữ liệu
+    //    let a = +prompt("nhập giá trị a");
+    //    let b = +prompt("nhập giá trị b");
+    //    let sum = a + b;
+    //    alert("tổng của a và b " + sum)
+        function cong() {
+            let n1 = +document.getElementById("input1").value;
+            let n2 = +document.getElementById("input2").value;
+            let sum = n1 + n2;
+            document.getElementById("result").innerText= sum;
+        }
+        
+            
+    </script>
+</body>
+</html>
