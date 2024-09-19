@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+<body>
+    <p>Bài 3: Viết chương trình tính diện tích hình tròn</p>
+    <p>Công thức tính diện tích hình tròn: A = π * r^2</p>
+    <input type="number" id="radius" placeholder="Nhập bán kính hình tròn">
+    <button onclick="tinhDienTichHinhTron()">Tính</button>
+    <h2 id="result"></h2>
+    
+    <script>
+        function tinhDienTichHinhTron() {
+            // Lấy giá trị bán kính từ input
+            let radius = document.getElementById("radius").value;
+            radius = parseFloat(radius); // Chuyển đổi giá trị sang số
+
+            // Kiểm tra xem bán kính có hợp lệ không
+            if (radius <= 0) {
+                document.getElementById("result").innerHTML = "Bán kính phải lớn hơn 0";
+                return;
+            }
+            
+            // Công thức tính diện tích hình tròn: A = π * r^2
+            const pi = 3.14; 
+            let dienTich = pi * radius * radius;
+            
+            // Hiển thị kết quả
+            document.getElementById("result").innerHTML = "Kết quả: " + dienTich;
+        }
+    </script>
+</body>
+</html>

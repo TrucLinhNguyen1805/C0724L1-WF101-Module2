@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+</head>
+<body>
+    <p>Bài 1: Viết chương trình nhập điểm của một sinh viên cho các môn: Vật lý, Hóa học, và Sinh học. Sau đó hiển thị điểm trung bình và tổng của những điểm này.</p>
+    <input id="input1" placeholder="Nhập điểm của môn Vật lý">
+    <input id="input2" placeholder="Nhập điểm của môn Hóa học">
+    <input id="input3" placeholder="Nhập điểm của môn Sinh học">
+    <button onclick="tongDiem()">Tổng điểm</button>
+
+    <h2 id="result"> </h2>
+    <h2 id="result1"></h2>
+    <script>
+        function tongDiem(){
+            let vatLy = +document.getElementById('input1').value;
+            let hoaHoc = +document.getElementById('input2').value;
+            let sinhHoc = +document.getElementById('input3').value;
+            let avg = (vatLy + hoaHoc + sinhHoc)/3;
+            let sum = (vatLy + hoaHoc + sinhHoc);
+            document.getElementById("result").innerHTML = "Điểm trung bình: " + avg;
+            document.getElementById("result1").innerHTML = "Điểm tổng: "+ sum;
+
+        }
+    </script>
+</body>
+</html>

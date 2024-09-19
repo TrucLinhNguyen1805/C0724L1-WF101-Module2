@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 4</title>
+</head>
+<body>
+    <p>Bài 4: Viết chương trình chu vi hình tròn. </p>
+    <p>Công thức tính chu vi hình tròn: C = 2 * π * r</p>
+    <input type="number" id="radius" placeholder="Nhập bán kính hình tròn">
+    <button onclick="tinhChuViHinhTron()">Tính</button>
+    <h2 id="result"></h2>
+    
+    <script>
+        function tinhChuViHinhTron() {
+            // Lấy giá trị bán kính từ input
+            let radius = document.getElementById("radius").value;
+            radius = parseFloat(radius); // Chuyển đổi giá trị sang số
+
+            // Kiểm tra xem bán kính có hợp lệ không
+            if (radius <= 0) {
+                document.getElementById("result").innerHTML = "Bán kính phải lớn hơn 0";
+                return;
+            }
+            
+            // Công thức tính chu vi hình tròn: C = 2 * π * r
+            const pi = 3.14; 
+            let chuVi = 2 * pi * radius;
+            
+            // Hiển thị kết quả
+            document.getElementById("result").innerHTML = "Kết quả: " + chuVi;
+        }
+    </script>
+</body>
+</html>
