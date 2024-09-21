@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+    <h4>[Bài tập] Ứng dụng máy tính</h4>
+    <p>Tạo một ứng dụng máy tính đơn giản để thực hiện các phép tính đơn giản.</p>
+    <input type="number" id="num1">
+    <input type="number" id="num2"><br> <br>
+    <button onclick="add()">Cộng(+)</button>
+    <button onclick="sub()">Trừ(-)</button>
+    <button onclick="mul()">Nhân(*)</button>
+    <button onclick="div()">Chia(/)</button>
+    <h2 id="result"></h2>
+
+    <script>
+        let result = 0;
+        let = document.getElementById("num1");
+        let = document.getElementById("num2");
+        // Phép cộng
+        function add(){
+            let number1 = +num1.value;
+            let number2 = +num2.value;
+            let result = number1 + number2;
+            document.getElementById("result").innerHTML = `Kết quả là: ${result}`;
+        }
+        // Phép trừ
+        function sub(){
+            let number1 = +num1.value;
+            let number2 = +num2.value;
+            let result = number1 - number2;
+            document.getElementById("result").innerHTML = `Kết quả là: ${result}`;
+        }
+        // Phép nhân
+        function mul(){
+            let number1 = +num1.value;
+            let number2 = +num2.value;
+            let result = number1 * number2;
+            document.getElementById("result").innerHTML = `Kết quả là: ${result}`;
+        }
+        // Phép chia
+        function div(){
+            let number1 = +num1.value;
+            let number2 = +num2.value;
+            let result = number1 / number2;
+            document.getElementById("result").innerHTML = `Kết quả là: ${result}`;
+        }
+    </script>
+</body>
+</html>
