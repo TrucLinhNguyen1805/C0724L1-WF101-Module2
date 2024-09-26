@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</p>
+    <script>
+        let doanhSo = parseFloat(prompt("Nhập doanh số bán hàng (VNĐ): "))
+        let hoaHong = 0;
+        if(doanhSo < 10000000){
+            hoaHong = doanhSo * 0.05
+        }else if(doanhSo >= 10000000 && doanhSo < 20000000){
+            hoaHong = doanhSo * 0.10
+        }else{
+            hoaHong = doanhSo * 0.15
+        }
+        alert(`Hoa hồng nhận được là: ${hoaHong} VNĐ`);
+    </script>
+</body>
+</html>

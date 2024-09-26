@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho</p>
+    <script>
+        const phiThueBao = 25000; // VNĐ
+        const cuocGoiNoiMang = 800; // VNĐ/phút
+        const cuocGoiNgoaiMang = 1000; // VNĐ/phút
+        const gioiHanMienPhi = 20; // phút
+
+        // Nhập số phút gọi từ người dùng
+        let phutGoiNoiMang = parseInt(prompt("Nhập số phút gọi nội mạng: "));
+        let phutGoiNgoaiMang = parseInt(prompt("Nhập số phút gọi ngoại mạng: "));
+        
+        // Tính cước
+        let cuocGoiNoiMangThucTe = 0;
+        if (phutGoiNoiMang > gioiHanMienPhi) {
+            cuocGoiNoiMangThucTe = (phutGoiNoiMang - gioiHanMienPhi) * cuocGoiNoiMang;
+        }
+
+        let cuocGoiNgoaiMangThucTe = phutGoiNgoaiMang * cuocGoiNgoaiMang;
+
+        // Tổng cước
+        let tongCuoc = phiThueBao + cuocGoiNoiMangThucTe + cuocGoiNgoaiMangThucTe;
+
+        // Hiển thị kết quả
+        alert(`Tổng cước điện thoại là: ${tongCuoc} VNĐ`);
+    </script>
+</body>
+</html>

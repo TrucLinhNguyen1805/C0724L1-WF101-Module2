@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</p>
+    <script>
+        let diemBaiKiemTra = parseFloat(prompt("Nhập điểm bài kiểm tra"));
+        let diemGiuaKy = parseFloat(prompt("Nhập điểm bài thi giữa kỳ"));
+        let diemCuoiKy = parseFloat(prompt("Nhập điểm bài thi cuối kỳ"));
+        let avg = (diemBaiKiemTra + diemGiuaKy + diemCuoiKy ) /3;
+        if(avg >8){
+            console.log("Giỏi")
+        }else if(avg>7){
+            console.log("Khá")
+        }else if(avg >6){
+            console.log("Trung bình")
+        }else{
+            console.log("Yếu")
+        }
+
+    </script>
+</body>
+</html>
