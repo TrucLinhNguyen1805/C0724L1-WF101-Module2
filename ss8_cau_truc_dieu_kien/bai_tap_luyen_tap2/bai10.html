@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bài 10: Viết chương trình tính giá điện.</p>
+    <!-- Bậc thang 1: 0 - 50: 1,806 đồng/kWh
+    Bậc thang 2: 51 - 100: 1.866 đồng/kWh
+    Bậc thang 3: 101 - 200: 2,167 đồng/kWh
+    Bậc thang 4: 201 - 300: 2,729 đồng/kWh
+    Bậc thang 5: 301 - 400: 3.050 đồng/kWh
+    Bậc thang 6: Trên 400: 3,151 đồng/kWh -->
+    <script>
+        let soDien = +prompt("Nhập số lượng điện tiêu thụ (kwh)");
+        let giaDien;
+        if(soDien <= 50){
+            giaDien = soDien * 1806;
+        }else if(soDien <= 100){
+            giaDien = (50 * 1806) + ((soDien - 50) * 1866);
+        }else if(soDien <= 200){
+            giaDien = (50 * 1806) + (50 * 1866) + ((soDien - 100) * 2167);
+        }else if(soDien <= 300){
+            giaDien = (50 * 1806) + (50 * 1866) + (100 * 2167) + ((soDien - 200) * 2729);
+        }else if(soDien <= 400){
+            giaDien = (50 * 1806) + (50 * 1866) + (200 * 2167) + ((soDien - 300) * 3050);
+        }else{
+            giaDien = (50 * 1806) + (50 * 1866) + (300 * 2167) + ((soDien - 400) * 3151);
+        }
+        console.log("Tổng số tiền điện phải trả là: " + giaDien + " VNĐ");
+    </script>
+</body>
+</html>

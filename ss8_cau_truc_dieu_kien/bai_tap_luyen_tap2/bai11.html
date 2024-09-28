@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bài 11: Tính thuế thu nhập cá nhân.</p>
+    <script>
+        let tncn = +prompt("Nhập thu nhập năm (VNĐ):");
+        let thue;
+        if (tncn <= 60000000) {
+            thue = 0;
+        } else if (tncn <= 120000000) {
+            thue = (tncn - 60000000) * 0.05;
+        } else if (tncn <= 216000000) {
+            thue = (60000000 * 0.05) + (tncn - 120000000) * 0.10;
+        } else if (tncn <= 384000000) {
+            thue = (60000000 * 0.05) + (96000000 * 0.10) + (tncn - 216000000) * 0.15;
+        } else if (tncn <= 624000000) {
+            thue = (60000000 * 0.05) + (96000000 * 0.10) + (168000000 * 0.15) + (tncn - 384000000) * 0.20;
+        } else if (tncn <= 960000000) {
+            thue = (60000000 * 0.05) + (96000000 * 0.10) + (168000000 * 0.15) + (240000000 * 0.20) + (tncn - 624000000) * 0.25;
+        } else if (tncn <= 1800000000) {
+            thue = (60000000 * 0.05) + (96000000 * 0.10) + (168000000 * 0.15) + (240000000 * 0.20) + (336000000 * 0.25) + (tncn - 960000000) * 0.30;
+        } else {
+            thue = (60000000 * 0.05) + (96000000 * 0.10) + (168000000 * 0.15) + (240000000 * 0.20) + (336000000 * 0.25) + (840000000 * 0.30) + (tncn - 1800000000) * 0.35;
+        }
+        console.log("Tổng thuế thu nhập cá nhân phải trả là: " + thue + " VNĐ");
+    </script>
+</body>
+</html>
