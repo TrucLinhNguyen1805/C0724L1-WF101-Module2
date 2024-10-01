@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bài 4: In hình chữ nhật</p>
+    <pre id="rectangle"></pre>
+    <script>
+         function drawRectangleWithStars(width, height) {
+            let result = '';
+            for (let i = 0; i < height; i++) {
+                let line = '';
+                for (let j = 0; j < width; j++) {
+                    if (i === 0 || i === height - 1 || j === 0 || j === width - 1) {
+                        line += '*'; // Vẽ đường viền bằng ngôi sao
+                    } else {
+                        line += ' '; // Vẽ khoảng trắng bên trong
+                    }
+                }
+                result += line + '\n'; // Thêm dòng vào kết quả
+            }
+            document.getElementById('rectangle').textContent = result; // Hiển thị kết quả
+        }
+        // Gọi hàm với chiều rộng và chiều cao mong muốn
+        drawRectangleWithStars(30, 10);
+    </script>
+</body>
+</html>
