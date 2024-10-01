@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>[Bài tập] Hiển thị các số nguyên tố đầu tiên</p>
+    <script>
+        let n = +prompt("Nhập số số nguyên tố cần in ra:");
+        let count = 0;
+        let num = 2;
+        let result = "";
+        while (count < n) {
+            let isPrime = true;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (num > 1 && isPrime) {
+                result += num + "<br>";
+                count++;
+            }
+            num++;
+        }
+        document.body.innerHTML += `<h2>${n} số nguyên tố đầu tiên là:</h2><div>${result}</div>`;
+    </script>
+</body>
+</html>
