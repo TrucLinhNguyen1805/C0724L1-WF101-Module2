@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".</p>
+    <script>
+        let number;
+        for (number = 1; number <= 100; number++) { 
+            if (number % 3 == 0 && number % 5 !== 0) {
+                document.write("Fizz" + "<br>");
+                continue;
+            } else if (number % 5 == 0 && number % 3 !== 0) {
+                document.write("Buzz" + "<br>");
+                continue;
+            } else if (number % 3 == 0 && number % 5 == 0) {
+                document.write("FizzBuzz" + "<br>");
+                continue;
+            }
+            document.write (number + "<br>");
+        }
+    </script>
+</body>
+</html>

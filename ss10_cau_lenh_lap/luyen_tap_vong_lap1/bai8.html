@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Bài 8: Game đoán số</p>
+    <button onclick="doanSo()">Chơi</button>
+    <script>
+        function doanSo() {
+            const range = +prompt("Số bạn muốn đoán trong khoảng nào?");
+            const numberRandom = Math.floor(Math.random() * range) + 1; 
+            console.log(numberRandom);
+            let numberCheck;
+            let count = 0;
+
+            while (count < 4) {
+                numberCheck = +prompt("Nhập số bạn đoán được:");
+                count++;
+
+                if (numberCheck === numberRandom) {
+                    document.write("Chúc mừng bạn đã đoán đúng số.");
+                    return; 
+                } else if (numberCheck < numberRandom) {
+                    alert("Số bạn đoán bé hơn số đã nhập.");
+                } else {
+                    alert("Số bạn đoán lớn hơn số đã nhập.");
+                }
+
+                if (count === 4) {
+                    document.write("Bạn hết số lần đoán. Số đúng là: " + numberRandom);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
