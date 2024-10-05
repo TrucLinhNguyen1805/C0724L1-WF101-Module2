@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student1 = "Linh";
+        let student2 = "Linh1";
+        let student3 = "Linh2";
+        let students = ["Linh","Linh1","Linh2"];
+        // console.log(students.length);
+        // students[3]="Chánh";
+        // console.log(students.length);
+        
+        // let student = [1,"chánh",40,"Đà nẵng",true]; // lưu được nhiều kiểu dữ liệu
+        // //cách 1:  khởi tạo một mảng => sử dụng []
+        // let numbers = [1,14,15,17]; // mảng số
+        // //cách 2: sử dụng từ khóa new Array()
+        // let numbers2 = new Array(1,3,6,8);
+        let numbers3 = Array(2,4,45,6,7,9); //hơi đặc biệt
+        // let numbers4 = new Array(5) //độ dài của mảng là 5 và các phần tử bên trong là undefined
+        // let strings = new Array("5"); // chỉ có một phần tử có giá trị là 5
+        // Duyệt mảng: đi qua lần lượt các phần tử của mảng
+        //Để duyệt mảng thường dùng vòng lặp for (biết trước số lần lặp)
+        // for(let i =0; i< numbers3.length; i++){
+        //     console.log("index:" +i+ "-value:" + numbers3[i]);
+        // }
+        // for(let i =0; i< numbers4.length; i++){
+        //     console.log("index:" +i+ "-value:" + numbers4[i]);
+        // }
+        // for(let i =0; i< strings.length; i++){
+        //     console.log("index:" +i+ "-value:" + strings[i]);
+        // }
+        // // tìm ra phần tử có giá trị lớn nhất trong mảng
+        // let max = numbers3[0];
+        // for(let i =1; i< numbers3.length; i++){
+        //     if(max < numbers3[i]){
+        //         max = numbers3[i];
+        //     }
+        // }
+        // alert("giá trị lớn nhất " +max);
+        //sử dụng vòng lặp for cải tiến
+        //for-in
+        // for (let indx in numbers3) {
+        //     console.log(indx+ ": " + numbers3[indx]);
+        // }
+        // //for-of
+        // for(let student of students){
+        //     console.log(student);
+        // }
+        //in giá trị mảng từ cuối lên đầu
+        // for(let i = numbers3.length-1; i>=0;i--){
+        //     console.log(numbers3[i]);
+        // }
+        //in ra các phần tử ở 1/2 mảng sau cùng
+        // for(let i = numbers3.length/2; i< numbers3.length; i++){
+        //     console.log(numbers3[i]);
+        // }
+        // có hỗ trợ các hàm (phương thức ) để thao tác với mảng
+        //thêm, xóa các phần tử, nối mảng,  đảo mảng, 
+        //thêm: đầu => unshift(), cuối => push(), thêm bất kỳ splice()
+        //xóa: đầu =>shift(), cuối => pop(), xóa bất kỳ splice()
+        let nums = [34,45,32,12,38];
+        // nums.shift();
+        // alert(nums);
+        // nums.push(40);
+        // alert(nums);
+        //xóa phần tử ở vị trí index 3
+        // nums.splice(3,1); // 3:vị trí cần xóa, 1: số lượng phần tử bị xóa
+        // alert(nums);
+        // thêm phần tử 100 vào vị trí index 2; [34,45,100,32,12,38]
+        // nums.splice(2,0,100);
+        // alert(nums);
+        //
+        let check = nums.includes(38);
+        let index = nums.indexOf(38);
+        alert(index);
+    </script>
+</body>
+</html>

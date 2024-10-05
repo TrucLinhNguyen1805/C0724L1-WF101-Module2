@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó. -->
+    <script>
+        let input = prompt("Nhập các số nguyên cách nhau bằng dấu phẩy:");
+        let array = input.split(",").map(Number);
+        let reversedArray = reverseArray(array);
+        function reverseArray(arr) {
+            let reversed = [];
+            for (let i = arr.length - 1; i >= 0; i--) {
+                reversed.push(arr[i]);
+            }
+            return reversed;
+        }
+        console.log("Mảng ban đầu:", array);
+        console.log("Mảng sau khi đảo ngược:", reversedArray);
+    </script>   
+</body>
+</html>

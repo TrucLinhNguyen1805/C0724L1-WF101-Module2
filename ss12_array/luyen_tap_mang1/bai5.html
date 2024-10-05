@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Đếm Số Nguyên Âm trong Mảng</h1>
+    <script>
+        let nums = [-1, 2, 4, -7, 20, -24, 9, -36];
+        let count = 0;
+        for (let i = 0; i < nums.length; i++) {
+            if (nums[i] < 0) { 
+                count++;
+            }
+        }
+        console.log("Số lượng số nguyên âm trong mảng:", count);
+    </script>
+</body>
+</html>

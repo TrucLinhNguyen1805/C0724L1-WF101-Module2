@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array". -->
+    <script>
+        let nums = [2,9,12,42,20,68,30]
+        let v =30; 
+        let check = false;
+        for(let i = 1; i < nums.length; i++){
+            if (nums[i] == v){
+                check=true;
+                break;
+            }
+        }
+        if (check){
+            alert("V is in the array");
+            alert("V is not in the array");
+        }
+    </script>
+</body>
+</html>

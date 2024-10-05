@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>[Bài tập] Từ điển</p>
+    <label for="string">Nhập từ cần tìm: </label>
+    <input type="text" id="string">
+    <button onclick="transcript()">Dịch</button>
+    <p id="result"></p>
+    <script>
+        function transcript(){
+            let arr_eng = ["apple", "banana", "orange", "mango", "jackfruit","lemon","kiwi","berry","cat","dog"];
+            let arr_vie = ["táo","chuối","cam","xoài","mít", "chanh","kiwi", "dâu", "mèo", "chó"];
+            let string = document.getElementById("string").value.toLowerCase(); 
+            let index_eng = arr_eng.indexOf(string); 
+            let result = "";
+            for (let i = 0; i < arr_eng.length; i++) {
+                if (index_eng !== -1) {
+                result = arr_vie[index_eng]; 
+                } else {
+                    result = "Từ không tìm thấy."; 
+                }
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
