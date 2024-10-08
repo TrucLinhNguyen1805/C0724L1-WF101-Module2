@@ -7,22 +7,32 @@
 </head>
 <body>
     <script>
-        let a = [];
-        let b = [];
-        for (let i = 0; i < a.length; i++) {
-            let value = parseInt(prompt(`Nhập phần tử thứ ${i + 1} cho mảng a:`));
-            a.push(value);
+        // let a = [];
+        // let b = [];
+        // for (let i = 0; i < a.length; i++) {
+        //     let value = parseInt(prompt(`Nhập phần tử thứ ${i + 1} cho mảng a:`));
+        //     a.push(value);
+        // }
+        // for (let i = 0; i < b.length; i++) {
+        //     let value = parseInt(prompt(`Nhập phần tử thứ ${i + 1} cho mảng b:`));
+        //     b.push(value);
+        // }
+        // let c = new Array(20);
+        // for (let i = 0; i < 10; i++) {
+        //     c[i] = a[i];
+        //     c[i + 10] = b[i]; 
+        // }
+        // console.log("Mảng c sau khi nối là", c);
+        let arr1 =[1,2,3];
+        let arr2 =[1,2,3];
+        let arr =[];
+        for(let i = 0; i<arr1.length; i++){
+            arr.push(arr1[i]);
         }
-        for (let i = 0; i < b.length; i++) {
-            let value = parseInt(prompt(`Nhập phần tử thứ ${i + 1} cho mảng b:`));
-            b.push(value);
+        for(let i = 0; i<arr2.length; i++){
+            arr.push(arr2[i]);
         }
-        let c = new Array(20);
-        for (let i = 0; i < 10; i++) {
-            c[i] = a[i];
-            c[i + 10] = b[i]; 
-        }
-        console.log("Mảng c sau khi nối là", c);
+        alert(arr);
     </script>
 </body>
 </html>

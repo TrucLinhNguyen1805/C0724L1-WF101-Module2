@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng.
+        Chương trình này đếm số ký tự số trong mảng. -->
+    <script>
+        let charArray = ['l', '4', 'i', '6', 'n', '8', 'h', '20','h','5'];
+        let size = charArray.length;
+        let digitCount = 0;
+        for (let i = 0; i < size; i++) {
+            if (/\d/.test(charArray[i])) { 
+                digitCount++;
+            }
+        }
+        alert("Kích thước của mảng: " + size);
+        alert("Số ký tự số trong mảng: " + digitCount);
+    </script>
+</body>
+</html>

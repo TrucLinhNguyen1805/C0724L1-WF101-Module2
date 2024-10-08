@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Bài 2: Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược. 
+    Ví dụ, nếu một mảng chứa các ký tự  [ 'c', 's', 'c', '2', '6', '1' ] sau khi thực hiện đảo ngược sẽ là "162csc"
+    <script>
+        let mang = [ 'c', 's', 'c', '2', '6', '1' ];
+        //phan tu thu 1    2    3    4    5    6             //cau lenh mang.lengh hien thi so phan tu
+        //index       0    1    2    3    4    5        //cau lenh mang.lengh-1 hien thi index
+        let mangNguoc = "";
+        for(let i = mang.length-1; i>=0; i--){
+            mangNguoc += mang[i];
+        }
+        alert(mangNguoc);
+    </script>
+</body>
+</html>

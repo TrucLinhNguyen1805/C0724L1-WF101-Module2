@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n =0;
+        do{
+            n = +prompt("Nhập vào độ dài của mảng");
+        }while(n<=0||n>20)
+        let array = [];
+        for(let i=0; i<n; i++){ 
+            let element = +prompt("nhập phần tử thứ:"+n);
+            array.push(element);
+        }
+        alert("Mảng vừa nhập là: "+array);
+        let v = +prompt("nhập số v");
+        for(let i=0; i<array.length; i++){
+            if(v==array[i]){
+                //dịch chuyển mảng tại vị trí i, duyệt tới vị trí áp chót
+                for(let j=i; j<array.length-1; j++){
+                    array[j] = array[j+1];
+                }
+                i--; //nhập 6 ký tự [1,2,3,3,3,3] nếu muốn xóa hết số 3 đi
+                array[array.length-1]=0;
+                // break;  //nhập 6 ký tự [1,2,3,3,3,3] nếu muốn xóa 1 số 3
+            }
+        }
+        alert(array);
+    </script>
+</body>
+</html>
