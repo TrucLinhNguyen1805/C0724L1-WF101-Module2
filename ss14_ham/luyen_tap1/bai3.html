@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 3: Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại 
+    thông báo cho người dùng. Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, 
+    trả về tổng của hai tham số. -->
+    <script>
+        let num1 = +prompt("Nhập tham số 1");
+        let num2 = +prompt("Nhập tham số 2");
+        function giaTri(num1, num2){
+            return num1 > num2;
+        }
+        if(giaTri(num1,num2)){
+            alert("Giá trị tham số thứ nhất lớn hơn giá trị tham số thứ hai");
+        }else{
+            let sum = num1 + num2;
+            alert("Tổng của tham số 1 và tham số 2 là " +sum);
+        }
+    </script>
+</body>
+</html>
