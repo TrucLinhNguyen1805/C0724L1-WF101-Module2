@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được. -->
+     <script>
+        let num = +prompt("Nhập một số nguyên");
+        function giaiThua(number){
+            let result = 1;
+            for(let i = 1; i <= number; i++){
+                console.log({i});
+                result *= i;
+            }
+            return result;
+        }
+        console.log(giaiThua(num));
+     </script>
+</body>
+</html>

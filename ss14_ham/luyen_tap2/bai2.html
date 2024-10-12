@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được -->
+     <script>
+        const PI = 3.14;
+        let r = +prompt("Nhập r");
+        
+        function tinhDienTich(bankinh){
+            let S = PI * bankinh * bankinh;
+            return S;
+        }
+        let dienTichCanTim = tinhDienTich(r);
+        console.log(dienTichCanTim);  
+
+        function tinhChuVi(bankinh){
+            let C = 2 * PI * bankinh;
+            return C;
+        }
+        console.log(tinhChuVi(r));
+     </script>
+</body>
+</html>

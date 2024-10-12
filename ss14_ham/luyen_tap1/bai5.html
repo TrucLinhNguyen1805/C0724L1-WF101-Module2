@@ -7,11 +7,21 @@
 </head>
 <body>
     <script>
-        let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
-        let arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", 'Leo'];
-        let star = +prompt("Nhập tên ngôi sao");
-        function checkStar(){
-            
+        let ngoiSao = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let chomSao = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", 'Leo'];
+        function timSao(star){
+            let index = ngoiSao.indexOf(star);  // sử dụng indexOf khi tìm vị trí
+            if(index != -1){ // so sánh vs -1 để kiểm tra tồn tại của index
+                let ngoiSaoTimDuoc = chomSao[index];
+                return ngoiSaoTimDuoc;
+            }
+        }
+        let nhapVao = prompt("Nhập ngôi sao cần tìm");
+        let ketQua = timSao(nhapVao);
+        if(ketQua){
+            console.log(ketQua);
+        }else{
+            console.log("Không có kết quả");
         }
     </script>
 </body>

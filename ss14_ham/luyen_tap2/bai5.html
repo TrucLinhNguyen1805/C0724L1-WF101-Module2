@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất. -->
+    <script>
+        let num1 = +prompt("nhập vào số nguyên thứ nhất");
+        let num2 = +prompt("nhập vào số nguyên thứ 2");
+        let num3 = +prompt("nhập vào số nguyên thứ 3");
+        function giaTriNhoNhat(a,b,c){
+            return Math.min(a,b,c); 
+        }
+        let ketQua = giaTriNhoNhat(num1,num2,num3);
+        alert(ketQua);    
+    </script>
+</body>
+</html>

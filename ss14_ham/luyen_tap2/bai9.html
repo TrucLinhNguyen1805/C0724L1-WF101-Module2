@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong 
+     mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1 -->
+    <script>
+        let mangKyTu = ["l", "i", "n", "h", "t", "n"];
+        function kiemTra(check) {
+            let count = 0; // Biến đếm số lần xuất hiện
+            for (let i = 0; i < mangKyTu.length; i++) {
+                if (mangKyTu[i] === check) {
+                    count++; // Tăng biến đếm khi tìm thấy ký tự
+                }
+            }
+            return count > 0 ? count : -1; // Trả về số lần xuất hiện hoặc -1 nếu không tìm thấy
+        }
+        let kyTu = prompt("Nhập một ký tự bất kỳ");
+        let ketQua = kiemTra(kyTu)
+        if(ketQua !== -1){
+            console.log(`Số lần xuất hiện của ký tự '${kyTu}' đó là '${ketQua}'`);
+        }else{
+            console.log("-1");
+        }
+
+    </script>
+</body>
+</html>
