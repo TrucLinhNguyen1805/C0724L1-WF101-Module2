@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // khởi tạo đối tượng trực tiếp
+        // let student1 = {
+        //     id: 1,
+        //     name: "linh",
+        //     age: 22,
+        //     study: function(subject){
+        //         console.log(`${this.name} học viên đang học môn:  ${subject}`);        
+        //     }
+        // }
+        // console.log("tên học viên là: "+student1.name);
+        // student1.name = "hân";
+        // console.log("tên học viên là: "+student1.name);
+        // student1.study("Toán");
+        // khuôn mẫu để tạo ra đối tượng
+        // tên class đặt tên theo PascalCase
+        // let Student = function (id, name,age){
+        //     this.id = id;
+        //     this.name = name;
+        //     this.age = age;
+        //     //hành vi => method
+        //     this.study = function(subject){
+        //         console.log(`${this.name} học viên đang học môn:  ${subject}`);        
+        //     }
+        // }
+        //tạo class bằng từ khóa class của ES6 =>js 2015
+        class SinhVien {
+            //hàm / method nhưng nó đặt biệt vì nó sử dụng để khởi tạo đối tượng và khai báo các thuộc tính
+            constructor(id, name,age){ //(id, name,age) là tham số
+                this.id = id; //this.id là thuộc tính của đối tượng
+                this.name = name;
+                this.age = age;
+            }
+            //hành vi
+            study(subject){
+                console.log(`${this.name} học viên đang học môn:  ${subject}`);  
+            }
+        }
+        let sv1 = new SinhVien(10, "Linh", 22);
+        sv1.study("Hóa");
+        //tạo một đối tượng sinh viên từ 1 lớp Student
+        // let student2 = new Student(2,"nhi", 22);
+        // student2.study("Văn");
+        // let student3 = new Student(3,"anh", 22);
+        // student3.name("Trâm Anh");
+        // console.log(student3.name);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quản lý sản phẩm</h1>
+    <h4>Add new product</h4>
+    <input type="text" placeholder="New Product" id="product">
+    <button>Add</button>
+    <h4>Display All Product</h4>
+    <div id="result"></div>
+    
+    <script>
+        let productList = ["Sony Xperia", "Samsung Galaxy", "Nokia6", "Xiaomi Redmi Note 4", "Apple Iphone 16", "Oppo A71"];
+        display(productList);
+        function display(list){
+            let tableString = `<table border="1" class="border-collapse: collapse">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Product Name</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr> `;
+            for(let i = 0; i<list.length; i++){
+                tableString += `<tr>
+                                    <td>${i+1}</td>
+                                    <td>${list[i]}</td>
+                                    <td><button onclick="editProduct()">Edit</button></td>
+                                    <td><button onclick="deleteProduct()">Delete</button></td>
+                                </tr>`;
+            }
+            document.getElementById("result").innerHTML = tableString;
+        }
+        function editProduct(index){
+            let editProduct = prompt("Sửa thông tin sản phẩm");
+            productList[index] = editProduct;
+            display(productList);
+            // console.log(editProduct)
+        }
+        function deleteProduct(){
+
+        }
+        
+    </script>
+</body>
+</html>

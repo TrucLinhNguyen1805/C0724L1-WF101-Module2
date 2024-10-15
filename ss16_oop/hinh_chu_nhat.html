@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Rectangle {
+            constructor(width, height){
+                this.width = width;
+                this.height = height;
+            }
+            getWidth(){
+                return this.width;
+            }
+            getHeight(){
+                return this.height;
+            }
+            setWidth(width){
+                this.width = width;
+            }
+            setHeight(height){
+                this.height = height;
+            }
+            getDienTich(){
+                return this.width * this.height;
+            }
+            getChuVi(){
+                return (this.width + this.height) * 2;
+            }
+        }
+        let hinhChuNhat = new Rectangle(15,10);
+        hinhChuNhat.setWidth(25);
+        document.write("Chiều rộng: " + hinhChuNhat.getWidth() + "<br>");
+        document.write("Chiều dài: " + hinhChuNhat.getHeight() + "<br>");
+        document.write("Diện tích: " + hinhChuNhat.getDienTich() + "<br>");
+        document.write("Chu vi: " + hinhChuNhat.getChuVi() + "<br>");
+    </script>
+</body>
+</html>

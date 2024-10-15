@@ -17,10 +17,14 @@
                     count++; // Tăng biến đếm khi tìm thấy ký tự
                 }
             }
-            return count > 0 ? count : -1; // Trả về số lần xuất hiện hoặc -1 nếu không tìm thấy
+            if(count > 0){ // Trả về số lần xuất hiện hoặc -1 nếu không tìm thấy
+                return count;
+            }else{
+                return -1;
+            }
         }
         let kyTu = prompt("Nhập một ký tự bất kỳ");
-        let ketQua = kiemTra(kyTu)
+        let ketQua = kiemTra(kyTu);
         if(ketQua !== -1){
             console.log(`Số lần xuất hiện của ký tự '${kyTu}' đó là '${ketQua}'`);
         }else{
