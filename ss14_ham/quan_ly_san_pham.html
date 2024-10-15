@@ -8,8 +8,9 @@
 <body>
     <h1>Quản lý sản phẩm</h1>
     <h4>Add new product</h4>
-    <input type="text" placeholder="New Product" id="product">
-    <button>Add</button>
+    <input type="text" placeholder="New Product" id="product" onclick="addProduct()">
+    <button onclick="addProduct()">Add</button><br><br>
+    <span>Số lượng: </span><span id="soLuong"></span>
     <h4>Display All Product</h4>
     <div id="result"></div>
     
@@ -28,22 +29,33 @@
                 tableString += `<tr>
                                     <td>${i+1}</td>
                                     <td>${list[i]}</td>
-                                    <td><button onclick="editProduct()">Edit</button></td>
-                                    <td><button onclick="deleteProduct()">Delete</button></td>
+                                    <td><button onclick="editProduct(${i})">Edit</button></td>
+                                    <td><button onclick="deleteProduct(${i})">Delete</button></td>
                                 </tr>`;
             }
             document.getElementById("result").innerHTML = tableString;
+            document.getElementById("soLuong").innerHTML = productList.length;
         }
         function editProduct(index){
-            let editProduct = prompt("Sửa thông tin sản phẩm");
-            productList[index] = editProduct;
+            let editProduct = prompt(productList[index]+".Nhập vào tên cần sửa");
+            productList[index]= editProduct;
             display(productList);
-            // console.log(editProduct)
         }
-        function deleteProduct(){
-
+        function deleteProduct(index){
+            let conf = confirm("Bạn có muốn xoá sản phẩm " + productList[index] + " này không?");
+            if (conf) {
+                productList.splice(index, 1);
+                display(productList);
+            }
         }
-        
+        function addProduct() {
+            let newProduct = document.getElementById("product").value.trim();
+            if (newProduct) {
+                productList.push(newProduct);
+                display(productList);
+                document.getElementById("product").value = "";
+            } 
+        }
     </script>
 </body>
 </html>
