@@ -6,23 +6,25 @@
     <title>Document</title>
 </head>
 <body>
+    <canvas id="canvas1" width="400" height="200" style="border: 1px solid red;"></canvas>
     <script>
         class Rectangle {
             constructor(width, height){
                 this.width = width;
                 this.height = height;
             }
-            getWidth(){
-                return this.width;
-            }
-            getHeight(){
-                return this.height;
-            }
+            //tính bao đóng
             setWidth(width){
                 this.width = width;
             }
+            getWidth(){
+                return this.width;
+            }
             setHeight(height){
                 this.height = height;
+            }
+            getHeight(){
+                return this.height;
             }
             getDienTich(){
                 return this.width * this.height;
@@ -30,13 +32,26 @@
             getChuVi(){
                 return (this.width + this.height) * 2;
             }
+            
+        draw(){
+            let canvas = document.getElementById("canvas1");
+            let ctx = canvas.getContext("2d");
+            ctx.fillStyle ="green";
+            ctx.fillRect(0,0,this.width,this.height);
+            // ctx.rect(0,0,this.width,this.height);
+            // cts.stroke();
+        }
         }
         let hinhChuNhat = new Rectangle(15,10);
-        hinhChuNhat.setWidth(25);
-        document.write("Chiều rộng: " + hinhChuNhat.getWidth() + "<br>");
+        hinhChuNhat.setWidth(300);
+        hinhChuNhat.setHeight(150);
+        hinhChuNhat.draw();
+        document.write("<br>"+"Chiều rộng: " + hinhChuNhat.getWidth() + "<br>");
         document.write("Chiều dài: " + hinhChuNhat.getHeight() + "<br>");
         document.write("Diện tích: " + hinhChuNhat.getDienTich() + "<br>");
         document.write("Chu vi: " + hinhChuNhat.getChuVi() + "<br>");
+
+
     </script>
 </body>
 </html>

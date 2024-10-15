@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //tính bao đóng
+        class Animal{
+            constructor(name, weight,speed){
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+            }
+            //tính trừu tượng
+            say(){
+                console.log("Tiếng kêu chưa cụ thể"); 
+            }
+        }
+        //extends kế thừa và mở rộng
+        class Rat extends Animal{
+            constructor(name, weight,speed,status){ //không kế thừa nên gọi lại constructer của cha Animal
+                super(name, weight,speed);
+                this.status = status;
+            }
+
+            //thể hiện tính đa hình: cùng 1 hành vi nhưng phụ thuộc vào ngữ cảnh, 
+            say(text){
+                console.log("chit chit" +text);
+            }
+        }
+        class Cat extends Animal{
+            constructor(name, weight,speed,status){
+                super(name, weight,speed);
+            }
+            say(text){
+                console.log("meo meo" +text);
+            }
+            eatMouse(mouse){
+                if(mouse.status === true){
+                    this.say("c");
+                    this.weight += mouse.weight;
+                }else{
+                    this.say("chết rồi k ăn")
+                }
+            }
+            catchMouse(mouse){
+                if(this.speed > mouse.speed){
+                    this.say("bắt đc rồi");
+                    mouse.say("chết")
+                    this.eatMouse(mouse)
+                }else{
+                    mouse.say("Đố");
+                    this.say("Tha");
+                }
+            }
+        }
+        let jerry = new Rat("Jerry",1,10,true);
+        let tom = new Cat("Tom",10,10);
+        tom.catchMouse(jerry);
+        console.log("Khối lượng của tom:"+tom.weight);
+    </script>
+</body>
+</html>

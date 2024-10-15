@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class SwitchButton{
+            constructor(lamp, status){
+                this.status = status;
+                this.lamp = lamp;
+                // this.status = false;
+            }
+            connectToLamp(Electriclamp){
+                return this.lamp = Electriclamp;
+            }
+            switchOff(){
+                this.lamp.status = false;
+                this.status = false;
+                return this.status;
+            }
+            switchOn(){
+                this.lamp.status = true;
+                this.status = true;
+                return this.status;
+            }
+        }
+        class Electriclamp{
+            constructor(status){
+                this.status = status;
+            }
+        }
+        let electricLamp = new Electriclamp(false);
+        let switchButton = new SwitchButton(electricLamp, false);
+
+        console.log(switchButton.switchOn());
+        console.log(electricLamp.status);
+        console.log(switchButton.switchOff());
+        console.log(electricLamp.status);
+    </script>
+</body>
+</html>
