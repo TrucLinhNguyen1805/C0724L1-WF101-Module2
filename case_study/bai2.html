@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+<body>
+    <script>
+        function checkTriangle(x, y, z) {
+            // Kiểm tra điều kiện tam giác
+            if (x + y <= z || x + z <= y || y + z <= x) {
+                console.log("k phải 3 cạnh của tam giác");
+                return;
+            }
+            // Kiểm tra xem có phải là tam giác vuông không
+            let tamGiac = [x, y, z].sort((a, b) => a - b);
+            if (tamGiac[0] ** 2 + tamGiac[1] ** 2 === tamGiac[2] ** 2) {
+                console.log("là 3 cạnh của tam giác vuông");
+            } else {
+                console.log("chỉ là 3 cạnh của tam giác");
+            }
+        }
+        let canh1 = +prompt("Nhập vào cạnh 1:");
+        let canh2 = +prompt("Nhập vào cạnh 2:");
+        let canh3 = +prompt("Nhập vào cạnh 3:");
+        checkTriangle(canh1, canh2, canh3);
+    </script>
+</body>
+</html>
