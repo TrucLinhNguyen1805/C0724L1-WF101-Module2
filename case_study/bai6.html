@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let soPhanTu = +prompt("Nhập số lượng mảng");
+        let array = [];
+        for (let i = 0; i < soPhanTu; i++) {
+            let mangKyTu = +prompt("Nhập số nguyên thứ " + i);
+            array.push(mangKyTu);
+        }
+        function mangSoNguyen() {
+            if (array.length == 0) {
+                return -1;
+            }
+            let soChan = 0;
+            let soLe = 0;
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] % 2 == 0) {
+                    soChan++;
+                } else {
+                    soLe++;
+                }
+            }
+            if (soChan === array.length) {
+                return 1;
+            }
+            if (soLe === array.length) {
+                return 0;
+            }
+            return -1;
+        }
+        console.log(mangSoNguyen());
+
+    </script>
+</body>
+
+</html>

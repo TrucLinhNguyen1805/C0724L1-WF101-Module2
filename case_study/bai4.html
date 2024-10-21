@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let phanSo = prompt("Nhập 1 phân số");
+        function find(x){
+            let [tuSo, mauSo] = x.split('/').map(Number); //[tuSo, mauSo] là mảng phân rã
+            if(mauSo === 0 || mauSo == undefined){
+                console.log("Không phải là phân số");
+                return;
+            }
+            function timUCLN(a,b){
+                while(b != 0){
+                    let temp = a;
+                    a = b;
+                    b = temp % b;
+                }
+                return a;
+            }
+            let UCLN = timUCLN(tuSo, mauSo);
+            tuSo = tuSo / UCLN;
+            mauSo = mauSo / UCLN;
+            console.log(`${tuSo}/${mauSo}`);
+        }
+        find(phanSo);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let soPhanTu;
+        do {
+            soPhanTu = prompt("Nhập độ dài mảng ký tự");
+        } while (soPhanTu < 1)
+        let array=[];
+        for (let i = 0; i < soPhanTu; i++) {
+            let mangKyTu = prompt("Nhập phần tử thứ " + i);
+            array.push(mangKyTu);
+        }
+        let chuaChu = false;
+        let chuaSo = false;
+        function checkMang() {
+           for(let i=0; i<array.length; i++){
+                if(isNaN(array[i])){
+                    chuaChu = true;
+                }else{
+                    chuaSo = true;
+                }
+           }
+           if(chuaSo && chuaChu === false ){
+                return 1;
+           } 
+           if(chuaChu && chuaSo === false) return 0;
+           return -1;
+        }
+        console.log(checkMang(array));
+        
+    </script>
+</body>
+
+</html>

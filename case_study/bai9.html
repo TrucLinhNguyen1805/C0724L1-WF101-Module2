@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = +prompt("Nhập độ dài của phần tử");
+        let array = [];
+        for (let i = 0; i < n; i++) {
+            let nhapPhanTu = +prompt("Nhập phần tử thứ "+i);
+            array.push(nhapPhanTu);
+        }
+        //Hiển thị mảng
+        console.log("Mảng vừa nhập là: " +array);
+        let checkNumber = false;
+        function kiemTraMang(){
+            for (let j = 0; j < array.length; j+=2) {
+                if(array[j] < array[j+1]){
+                    checkNumber = true;
+                }else{
+                    checkNumber = false;
+                }  
+            }
+            return checkNumber;
+        }
+        kiemTraMang();
+        if(checkNumber){
+            console.log("OK");   
+        }else{
+            console.log("NO");
+            
+        }
+    </script>
+</body>
+</html>
