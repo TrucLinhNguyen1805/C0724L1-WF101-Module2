@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Quản lý máy tính</h2>
+    <button onclick="addProduct()">Thêm mới máy tính</button>
+    <button  onclick="arrangeProduct()">Sắp xếp máy tính</button><br><br>
+    <div id="result"></div><br>
+    <script>
+        class MayTinh{
+            constructor(id,name,hang,price){
+                this.id = id;
+                this.name = name;
+                this.hang = hang;
+                this.price = price;
+            }
+            setID(){
+                this.id = id;
+            }
+            getID(){
+                return this.id;
+            }
+            setName(){
+                this.name = name;
+            }
+            getName(){
+                return this.name;
+            }
+            setHang(){
+                this.hang = hang;
+            }
+            getHang(){
+                return this.hang;
+            }
+            setPrice(){
+                this.price = price;
+            }
+            getPrice(){
+                return this.price;
+            }
+        }
+        let mayTinh = new MayTinh("1","Lenovo ThinkPad","Lenovo","15000000");
+        let mayTinh2 = new MayTinh("1","Dell","Dell","14000000");
+        let mayTinh3 = new MayTinh("1","Lenovo ThinkPad","Lenovo","12000000");
+        let maytinhList = [mayTinh,mayTinh2,mayTinh3];
+        display(maytinhList);
+        function display(list){
+            let tableString = `<table border="1" style="border-collapse: collapse;">
+                                    <tr>
+                                        <th>Mã máy</th>
+                                        <th>Tên máy</th>
+                                        <th>Hãng sản xuất</th>
+                                        <th>Giá</th>
+                                    </tr>`;
+            for (let i = 0; i < list.length; i++) {
+                tableString += `<tr>
+                        <td>${list[i].id}</td>
+                        <td>${list[i].name}</td>
+                        <td>${list[i].hang}</td>
+                        <td>${list[i].price}</td>
+                    </tr>`;
+            }
+            document.getElementById("result").innerHTML = tableString;
+        }
+        function addProduct(){
+            let productID = +prompt("Nhập vào mã máy cần thêm mới");
+            let productName = prompt("Nhập vào tên máy cần thêm mới");
+            let productHang = prompt("Nhập vào tên hãng sản xuất");
+            let productPrice = 0;
+            do{
+                productPrice = +prompt("Nhập vào giá của máy");
+            }while(isNaN(productPrice) || productPrice <0);
+            let newProduct = new MayTinh(productID,productName,productHang,productPrice);
+            if (newProduct) {
+                maytinhList.push(newProduct);
+                display(maytinhList);
+                alert("Thêm mới máy tính thành công");
+            } 
+        }
+        function arrangeProduct(){
+            maytinhList.sort((a,b) => a.getPrice(a) - b.getPrice(b));
+            display(maytinhList);
+        }
+    </script>
+</body>
+</html>

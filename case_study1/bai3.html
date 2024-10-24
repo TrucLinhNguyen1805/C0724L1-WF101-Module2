@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let n;
+        do {
+            n = +prompt("Nhập vào độ dài của mảng");
+        } while (n <= 0 || n > 50)
+        let array = [];
+        for (let i = 0; i < n; i++) {
+            let element = +prompt("Nhập phần tử thứ:" + i);
+            array.push(element);
+        }
+        alert("Mảng vừa nhập là: " + array);
+        function checkFibonaci() {
+            let F = 0, F0 = 0, F1 = 0;
+            let fibonacci = "";
+            for (i = 0; i < array.length; i++) {
+                if (i == 0) {
+                    F = 1;
+                    F1 = 1;
+                    fibonacci += F + " ";
+                } else {
+                    F = F0 + F1;
+                    F0 = F1;
+                    F1 = F;
+                    fibonacci += F + " ";
+                    console.log(i + " = " + F);
+                }
+            }
+        }
+        let result = checkFibonaci();
+        alert(result)
+
+    </script>
+</body>
+
+</html>

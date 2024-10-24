@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let chuoiKyTu = prompt("Nhập một chuỗi ký tự");
+        let vietHoa = 0;
+        let vietThuong = 0;
+        console.log(chuoiKyTu);
+        function demChuoiKyTu() {  
+            if(chuoiKyTu === ""){
+                return [0,0];
+            }
+            for (let i = 0; i < chuoiKyTu.length; i++) {
+                let chuoi = chuoiKyTu[i];
+                if (chuoi >= "a" && chuoi <= "z") {
+                    vietThuong++;
+                } else if (chuoi >= "A" && chuoi <= "Z") {
+                    vietHoa++;
+                }
+            }
+            return [vietHoa,vietThuong];
+        }
+        let result = demChuoiKyTu();
+        console.log(result);
+        console.log("Số ký tự thường là " + vietThuong);
+        console.log("Số ký tự in hoa là " + vietHoa);
+
+    </script>
+</body>
+
+</html>
