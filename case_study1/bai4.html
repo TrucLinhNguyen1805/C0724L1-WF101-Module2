@@ -58,10 +58,10 @@
                                     </tr>`;
             for (let i = 0; i < list.length; i++) {
                 tableString += `<tr>
-                        <td>${list[i].id}</td>
-                        <td>${list[i].name}</td>
-                        <td>${list[i].hang}</td>
-                        <td>${list[i].price}</td>
+                        <td>${list[i].getID}</td>
+                        <td>${list[i].getName}</td>
+                        <td>${list[i].getHang}</td>
+                        <td>${list[i].getPrice}</td>
                     </tr>`;
             }
             document.getElementById("result").innerHTML = tableString;
