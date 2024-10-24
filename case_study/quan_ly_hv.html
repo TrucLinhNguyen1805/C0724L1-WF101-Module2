@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý học viên</title>
+</head>
+
+<body>
+    <h2>Xây dựng hệ thống quản lý học viên CODEGYM</h2>
+    <button id="student" onclick="addStudent()">Thêm mới học viên</button>
+    <button onclick="editStudent()">Sửa thông tin học viên</button>
+    <button onclick="deleteStudent()">Xóa học viên</button><br><br>
+    <div id="result"></div>
+    <script>
+        class SinhVien {
+            constructor(id, name, classRoom, email, date, module) {
+                this.id = id;
+                this.name = name;
+                this.classRoom = classRoom;
+                this.email = email;
+                this.date = date;
+                this.module = module;
+            }
+        }
+        let student = new SinhVien("HV-0001", "Nguyễn Trúc Linh", "C0724L1", "truclinhnguyen1805@gmail.com", "18/05/2002", 1);
+        let student1 = new SinhVien("HV-0002", "Nguyễn Văn B", "C0724L1", "nguyenvanb@gmail.com", "17/11/1994", 2);
+        let student2 = new SinhVien("HV-0003", "Nguyễn Văn C", "C0724L1", "nguyenvanc@gmail.com", "2/2/2004", 3);
+        let studentList = [student, student1, student2];
+        display(studentList);
+        //student.id lấy id
+        function display(list) {
+            let tableString = `<table border="1" style="border-collapse: collapse;">
+                                    <tr>
+                                        <th>Mã học viên</th>
+                                        <th>Tên</th>
+                                        <th>Lớp</th>
+                                        <th>Email</th>
+                                        <th>Ngày sinh</th>
+                                        <th>Module</th>
+                                    </tr>`;
+            for (let i = 0; i < list.length; i++) {
+                tableString += `<tr>
+                        <td>${list[i].id}</td>
+                        <td>${list[i].name}</td>
+                        <td>${list[i].classRoom}</td>
+                        <td>${list[i].email}</td>
+                        <td>${list[i].date}</td>
+                        <td>${list[i].module}</td>
+                    </tr>`;
+            }
+            document.getElementById("result").innerHTML = tableString;
+        }
+        function addStudent() {
+            //Mã học viên
+            let studentID = prompt("Nhập ID của học viên mới");
+            let regexID = /^[A-Z]{2}.[\d]{4}$/;
+            let checkID = regexID.test(studentID);
+            if(!checkID){
+                alert("Định dạng mã học viên không hợp lệ");
+                return;
+            }
+            //Tên
+            let studentName = prompt("Nhập tên của học viên cần thêm mới");
+            let regexName = /^[\s\S]{1,50}$/;
+            let checkName = regexName.test(studentName);
+            if(!checkName){
+                alert("Tên học viên không hợp lệ");
+                return;
+            }
+            //Lớp
+            let studentClass = prompt("Nhập lớp học viên cần thêm mới");
+            //Email
+            let studentEmail = prompt("Nhập email của học viên cần thêm mới");
+            let regexEmail = /^[a-zA-Z][\w]{5,18}@[a-z]{2,7}\.[a-z]{2,7}$/;
+            let checkEmail = regexEmail.test(studentEmail);
+            if(!checkEmail){
+                alert("Email học viên không hợp lệ");
+                return;
+            }
+            //Date
+            let studentDate = prompt("Nhập ngày sinh của học viên cần thêm mới");
+            let regexDate = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/([0-9]{4})$/;
+            let checkDate = regexDate.test(studentDate);
+            if(!checkDate){
+                alert("Ngày sinh của học viên không hợp lệ");
+                return;
+            }
+            //Modeule
+            let studentModule = prompt("Nhập module của học viên mới");
+            let regexModule = /^[1-6]$/;
+            let checkModule = regexModule.test(studentModule);
+            if(!checkModule){
+                alert("Module của học viên không hợp lệ. Module chỉ được nhập từ 1 -> 6");
+                return;
+            }
+
+            let newStudent = new SinhVien(studentID,studentName,studentClass,studentEmail,studentDate,studentModule);
+            if (newStudent) {
+                studentList.push(newStudent);
+                display(studentList);
+                alert("Thêm mới học viên thành công");
+            } 
+        }
+        function editStudent() {
+            let editStudent = prompt("Nhập mã học viên cần sửa");
+            let index = -1;
+            for (let i = 0; i < studentList.length; i++) {
+                if (studentList[i].id === editStudent) {
+                    index = i;
+                    break;
+                }
+            }
+            if (index === -1) {
+                alert("Mã học viên không tồn tại");
+                return;
+            }
+            studentList[index].id = prompt("Nhập id muốn sửa " + studentList[index].id);
+            studentList[index].name = prompt("Nhập tên muốn sửa " + studentList[index].name);
+            studentList[index].classRoom = prompt("Nhập lớp muốn sửa " + studentList[index].classRoom);
+            studentList[index].email = prompt("Nhập email muốn sửa " + studentList[index].email);
+            studentList[index].date = prompt("Nhập ngày sinh muốn sửa " + studentList[index].date);
+            studentList[index].module = prompt("Nhập module muốn sửa " + studentList[index].module);
+            display(studentList);
+        }
+        function deleteStudent() {
+            let deleteStudent = prompt("Nhập mã học viên cần xóa");
+            let index = -1;
+            for (let i = 0; i < studentList.length; i++) {
+                if (studentList[i].id === deleteStudent) {
+                    index = i;
+                    break;
+                }
+            }
+            if (index === -1) {
+                alert("Mã học viên không tồn tại.");
+                return;
+            }
+            let conf = confirm("Bạn có chắc chắn muốn xóa học viên này không?")
+            if (conf) {
+                studentList.splice(index, 1);
+                display(studentList);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -25,7 +25,12 @@
             let UCLN = timUCLN(tuSo, mauSo);
             tuSo = tuSo / UCLN;
             mauSo = mauSo / UCLN;
-            console.log(`Phân số tối giản của ${phanSo} là ${tuSo}/${mauSo}`);
+            if(tuSo%mauSo === 0){
+                alert("Phân số tối giảnlà "+tuSo/mauSo);
+            }else{
+                alert(`Phân số tối giản của ${phanSo} là ${tuSo}/${mauSo}`);
+            }
+            
         }
         find(phanSo);
     </script>
