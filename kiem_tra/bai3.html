@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n;
+        do{
+            n = +prompt("Nhập vào độ dài của mảng");
+        }while(n<=0 || n>50);
+        let array = [];
+        for(let i=0; i<n; i++){
+            let element = +prompt("Nhập phần tử thứ:"+i);
+            array.push(element);
+        }
+        alert("Mảng vừa nhập là: " +array.join(", "));
+        let k;
+        do {
+            k = +prompt("Nhập vào số nguyên dương k:");
+        } while (k <= 0);
+        let count =0;
+        let capSo = [];
+        for (let i = 0; i < array.length - 1; i++) {
+            for (let j = i + 1; j < array.length; j++) {
+                if ((array[i] + array[j]) % k === 0) {
+                    count++;
+                    capSo.push(`(${array[i]}, ${array[j]})`);
+                }
+            }
+        }
+        alert(`Số lượng cặp số có tổng chia hết cho ${k} là: ${count}`);
+        if (count > 0) {
+            alert(`Các cặp số trong mảng thỏa mãn yêu cầu là: ${capSo.join(", ")}`);
+        }
+    </script>
+</body>
+</html>

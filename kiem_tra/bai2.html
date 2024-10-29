@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let diem;
+        do{
+            diem = +prompt("Nhập điểm của học sinh");
+        }while(diem<0 || diem>100);
+        function tinhDiem(){
+            if(diem>=48){
+                alert("Làm tròn điểm ");
+            }else{
+                alert("Không làm tròn vì điểm dưới 48");
+            }
+            if(diem<50){
+                alert(`Điểm số ${diem} là trượt`);
+            }else{
+                let boiSo = Math.ceil(diem/5) * 5;
+                if(diem >= 48 && boiSo - diem < 3) {
+                    alert("Điểm sau khi làm tròn là: " + boiSo);
+                } else {
+                    alert("Điểm không thay đổi: " + diem);
+                }
+            }
+        }
+        tinhDiem();
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h3>Quản lý khách hàng của một công ty bất động sản</h3>
+    <button class="btn btn-sm btn-success" onclick="addKhachHang()">Thêm mới khách hàng</button><br><br>
+    <div id="result"></div>
+    <script>
+        class KhachHang{
+            constructor(maKH,tenKH,soDienThoai,diaChi,email){
+                this.maKH = maKH;
+                this.tenKH = tenKH;
+                this.soDienThoai = soDienThoai;
+                this.diaChi = diaChi;
+                this.email = email;
+            } 
+        }
+        let khachHang = new KhachHang("1", "Nguyễn Thị Trúc Linh","0987654321","Đà Nẵng","truclinhnguyen@gmail.com");
+        let khachHang1 = new KhachHang("2", "Nguyễn Văn Thanh Vũ","0987654123","Đà Nẵng","vunguyen@gmail.com");
+        let khachHang2 = new KhachHang("3", "Nguyễn Văn Thanh Tuấn","0987623321","Quảng Nam","tuannguyen@gmail.com");
+        let khachHangList = [khachHang,khachHang1,khachHang2];
+        display(khachHangList);
+        function display(list){
+            let tableString = `<table border="1" class="table table-light"  style="border-collapse: collapse;">
+                                    <tr>
+                                        <th>Mã khách hàng</th>
+                                        <th>Tên khách hàng</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Địa chỉ</th>
+                                        <th>Email</th>
+                                    </tr>`;
+            for (let i = 0; i < list.length; i++) {
+                tableString += `<tr>
+                        <td>${list[i].maKH}</td>
+                        <td>${list[i].tenKH}</td>
+                        <td>${list[i].soDienThoai}</td>
+                        <td>${list[i].diaChi}</td>
+                        <td>${list[i].email}</td>
+                    </tr>`;
+            }
+            document.getElementById("result").innerHTML = tableString;
+        }
+        function addKhachHang(){
+            let idKhachHang = +prompt("Nhập vào mã khách hàng cần thêm mới");
+            let tenKhachHang = prompt("Nhập vào tên khách hàng cần thêm mới");
+            let soDienThoaiKH = prompt("Nhập vào số điện thoại của khách hàng");
+            let diaChiKhachHang = prompt("Nhập vào địa chỉ của khách hàng");
+            let emailKhachHang = prompt("Nhập vào email khách hàng cần thêm mới")
+            let newKhachHang = new KhachHang(idKhachHang,tenKhachHang,soDienThoaiKH,diaChiKhachHang,emailKhachHang);
+            if (newKhachHang) {
+                khachHangList.push(newKhachHang);
+                display(khachHangList);
+                alert("Thêm mới máy tính thành công");
+            } 
+        }
+        
+    </script>
+</body>
+</html>
